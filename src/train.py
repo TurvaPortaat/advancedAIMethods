@@ -14,7 +14,7 @@ def train_model(
 
     criterion = torch.nn.CrossEntropyLoss()
     
-    if optimizer_name.lower() = "sgd":
+    if optimizer_name.lower() == "sgd":
         optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=0.9, weight_decay=5e-4)
     else:
         optimizer = torch.optim.Adam(model.parameters(), lr=lr)
