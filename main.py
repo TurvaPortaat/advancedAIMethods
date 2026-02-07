@@ -116,7 +116,7 @@ def main():
     device = "cuda" if torch.cuda.is_available() else "cpu"
     criterion = torch.nn.CrossEntropyLoss()
     model = model.to(device)
-    testl_loss, test_acc = evaluate(model, testloader, criterion, device)
+    test_loss, test_acc = evaluate(model, testloader, criterion, device)
 
     record = {
         "model": args.model,
