@@ -118,7 +118,7 @@ def main():
     model = model.to(device)
     testl_loss, test_acc = evaluate(model, testloader, criterion, device)
 
-     record = {
+    record = {
         "model": args.model,
         "epochs": args.epochs,
         "batch": args.batch,
@@ -134,7 +134,7 @@ def main():
         "device": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "cpu",
         "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
         "augmentations": "RandomHorizontalFlip + RandomCrop(32,pad=4) on train; val/test ToTensor only",
-        }
+    }
     append_results(args.results, record)
     print(f"Saved results -> {args.results}")
     print(f"TEST acc: {test_acc:.2f}% loss {test_loss:.4f}")
