@@ -29,12 +29,19 @@ def get_model(name: str):
     raise ValueError(f"Unknown model name: {name}")
 
 def append_results(path, record):
+    data = []
     try:
         with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
+            txt = f.read().strip()
+            if txt:
+                data = json.load(f)
     except FileNotFoundError:
         data = []
+    except json.JSONDecodeError:
+        data = []
+        
     data.append(record)
+    
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
