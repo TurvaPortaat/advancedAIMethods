@@ -74,7 +74,7 @@ def main():
         
     if args.mode == "viz":
         from torchview import draw_graph
-        g = draw_graph(get_model(args.model), input_size(1,3,32,32), expand_nested= True,
+        g = draw_graph(get_model(args.model), input_size=(1,3,32,32), expand_nested= True,
                        save_graph = True, filename=f"{args.model}_graph", directory="runs")
         print(g.visual_graph)
         return
