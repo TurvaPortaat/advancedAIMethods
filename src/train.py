@@ -4,7 +4,8 @@ from src.eval import evaluate
 
 def train_model(
     model, 
-    trainloader, 
+    trainloader,
+    valloader,
     epochs=10, 
     lr=1e-3,
     optimizer_name="adam"):
