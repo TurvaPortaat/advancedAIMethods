@@ -90,7 +90,7 @@ def main():
         #   print(type(m).__name__, y.shape)
         #   print("SMOKE TEST DONE – no training executed")
 
-    if MODE == "train":
+    #if MODE == "train":
 
     #   model = CustomInceptionResidualNet()    # OR ResNetPretrained(), OR InceptionCIFAR(), OR ETC.
     #   train_model(model, trainloader, epochs=1, lr=1e-3)  #lower epochs to 1 during smoketest
